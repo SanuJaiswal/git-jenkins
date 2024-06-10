@@ -38,7 +38,7 @@ pipeline {
                     steps {
                         script {
                             // Convert Windows path to Unix path
-                            def workspaceUnixPath = pwd().replace('\\', '/')
+                            def workspaceUnixPath = pwd().replace('C:', '/mnt/c').replace('\\', '/')
                             echo "Workspace Unix Path: ${workspaceUnixPath}"
                             sh "echo Running inside Docker container with workspace: ${workspaceUnixPath}"
                         }
